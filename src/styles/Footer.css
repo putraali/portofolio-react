@@ -1,0 +1,29 @@
+/* White hover effects */
+.hover-white {
+    transition: all 0.3s ease;
+}
+
+.hover-white:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.hover-white-icon {
+    transition: all 0.3s ease;
+}
+
+.hover-white-icon:hover {
+    color: #ffffff !important;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+}
+
+/* Optional subtle glow effect on footer */
+footer {
+    transition: box-shadow 0.3s ease;
+}
+
+footer:hover {
+    box-shadow: 0 -5px 15px rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,203 @@
+/* Header Section */
+.header-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  padding: 8rem 0 6rem; /* Increased padding for better spacing */
+  overflow: hidden;
+  margin-top: 80px; /* Matches navbar height */
+}
+
+/* Container for content */
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Content alignment */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem 0;
+}
+
+/* Square Avatar Styling */
+.square-avatar-container {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  border-radius: 12px; /* Slightly larger radius */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin: 0 auto 3rem; /* Centered with bottom margin */
+  border: 8px solid white; /* Clean white border */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.square-profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.2) 100%);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.square-avatar-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.square-avatar-container:hover .square-profile-avatar {
+  transform: scale(1.03);
+}
+
+.square-avatar-container:hover .avatar-overlay {
+  opacity: 0.6;
+}
+
+/* Typography */
+.header-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.header-subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #4a5568;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.header-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* Text Gradient Effect */
+.text-gradient {
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Title Underline */
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  margin: 1.5rem auto;
+  transition: width 0.3s ease;
+}
+
+.header-subtitle:hover .title-underline {
+  width: 120px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #2c3e50;
+  background-color: rgba(52, 152, 219, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: white;
+  background-color: #3498db;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon {
+  font-size: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .header-section {
+    padding: 6rem 0 4rem;
+  }
+  
+  .header-title {
+    font-size: 2.8rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    padding: 5rem 0 3rem;
+    margin-top: 70px;
+  }
+  
+  .square-avatar-container {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 2rem;
+  }
+  
+  .header-title {
+    font-size: 2.2rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .header-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-section {
+    padding: 4rem 0 2rem;
+  }
+  
+  .header-title {
+    font-size: 2rem;
+  }
+}
