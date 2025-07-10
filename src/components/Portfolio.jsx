@@ -22,7 +22,7 @@ function Portfolio() {
 		<section id="portfolio" className="portfolio-section">
 			<div className="container">
 				<div className="section-header">
-					<h2 className="section-title">Projects</h2>
+					<h2 className="section-title">Project</h2>
 					<div className="title-underline"></div>
 					<p className="section-subtitle">
 						A collection of my recent design and development projects with
