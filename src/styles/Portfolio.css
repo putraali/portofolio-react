@@ -1,161 +1,314 @@
-/* Add these styles to your existing Portfolio.css */
+/* Portfolio Section */
+.portfolio-section {
+  padding: 5rem 0;
+  background: #f9f9f9;
+}
 
-/* Filter description */
-.filter-description {
+.section-header {
   text-align: center;
-  margin-bottom: 10px;
-  color: #666;
-  font-style: italic;
+  margin-bottom: 3rem;
 }
 
-/* Grid instruction */
-.grid-instruction {
-  text-align: center;
-  margin: 20px 0;
-  color: #555;
-  font-size: 0.9rem;
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-/* Portfolio item enhancements */
-.portfolio-info .project-tech {
-  font-size: 0.8rem;
-  color: #777;
-  margin-top: 5px;
+.title-underline {
+  width: 60px;
+  height: 3px;
+  background: #3a86ff;
+  margin: 0 auto 1.5rem;
 }
 
-/* Overlay enhancements */
-.portfolio-overlay-content {
-  padding: 15px;
-  text-align: center;
+/* Filters */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
 }
 
-.portfolio-overlay-content h4 {
-  margin-bottom: 10px;
-  color: white;
-}
-
-.overlay-description {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* Link tooltips */
-.link-tooltip {
-  display: none;
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #333;
-  color: white;
-  padding: 3px 8px;
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 0.7rem;
-  white-space: nowrap;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.portfolio-link:hover .link-tooltip {
-  display: block;
+.filter-btn:hover, .filter-btn.active {
+  background: #3a86ff;
+  color: white;
+  border-color: #3a86ff;
 }
 
-/* Modal enhancements */
-.modal-overlay {
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #777;
+}
+
+.portfolio-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.item-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .item-image img {
+  transform: scale(1.05);
+}
+
+.item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(58, 134, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .item-overlay {
+  opacity: 1;
+}
+
+.view-details-btn {
+  background: white;
+  color: #3a86ff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: #f0f0f0;
+}
+
+.item-info {
+  padding: 1.5rem;
+}
+
+.item-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.item-info .category {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.item-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.link-icon {
+  color: #555;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.link-icon:hover {
+  color: #3a86ff;
+}
+
+/* Project Modal */
+.project-modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 999;
-}
-
-.modal-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 800px;
-  width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
   z-index: 1000;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-image-container {
-  margin-bottom: 20px;
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  position: relative;
+  background: white;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  border-radius: 8px;
+  overflow-y: auto;
+  z-index: 1001;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #777;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.close-modal:hover {
+  color: #333;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
 .modal-image {
+  height: 100%;
+}
+
+.modal-image img {
   width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  object-fit: cover;
 }
 
-.modal-section {
-  margin-bottom: 20px;
+.modal-content {
+  padding: 3rem 2rem 3rem 0;
 }
 
-.modal-section h4 {
-  margin-bottom: 10px;
+.modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+  font-size: 1.8rem;
   color: #333;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
-.feature-list {
-  padding-left: 20px;
+.project-category {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #555;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
 }
 
-.feature-list li {
-  margin-bottom: 5px;
+.project-description {
+  margin-bottom: 2rem;
+  color: #555;
+  line-height: 1.6;
 }
 
-.modal-links {
+.technologies {
+  margin-bottom: 2rem;
+}
+
+.technologies h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.tech-tags {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.modal-link {
+.tech-tags span {
+  background: #f0f0f0;
+  color: #555;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-link {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 8px 15px;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  background: #3a86ff;
+  color: white;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
 }
 
-.demo-link {
-  background: #4CAF50;
-  color: white;
+.project-link:hover {
+  background: #2a76ef;
 }
 
-.code-link {
-  background: #333;
-  color: white;
-}
-
-.modal-link:hover {
-  opacity: 0.9;
-}
-
-.notes {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 5px;
-  border-left: 3px solid #4CAF50;
-}
-
-.no-projects-message {
-  text-align: center;
-  padding: 40px;
-  color: #666;
-  font-size: 1.1rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    padding: 2rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
