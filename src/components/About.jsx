@@ -1,5 +1,4 @@
 import "../styles/About.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import {
 	SiAdobeillustrator,
 	SiAdobephotoshop,

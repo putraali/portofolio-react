@@ -6,9 +6,7 @@ import {
 	FaInstagram,
 	FaWhatsapp,
 } from "react-icons/fa";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Contact.css";
-
 export default class Contact extends Component {
 	render() {
 		const phoneNumber = "+628966250177"; // Remove spaces and special characters for links
