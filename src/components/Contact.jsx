@@ -18,7 +18,7 @@ export default class Contact extends Component {
 			<section id="contact" className="contact-section py-5">
 				<div className="container">
 					<div className="section-header text-center mb-5">
-						<h2 className="display-4 fw-bold">Get In Touch</h2>
+						<h2 className="display-3 fw-bold">Contact</h2>
 						<div className="title-underline mx-auto"></div>
 						<p className="lead mt-3">
 							Have a project in mind or want to discuss opportunities?
