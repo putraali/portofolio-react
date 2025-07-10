@@ -8,7 +8,6 @@ function Portfolio() {
 	const [activeFilter, setActiveFilter] = useState("All");
 	const [selectedProject, setSelectedProject] = useState(null);
 
-	// Add category to your DataPortfolio items if not already present
 	const categories = [
 		"All",
 		...new Set(portfolioList.map((item) => item.category)),
@@ -26,7 +25,8 @@ function Portfolio() {
 					<h2 className="section-title">Project</h2>
 					<div className="title-underline"></div>
 					<p className="section-subtitle">
-						A collection of my recent design and development projects
+						A collection of my recent design and development projects with
+						detailed information
 					</p>
 				</div>
 
@@ -55,13 +55,28 @@ function Portfolio() {
 									className="portfolio-img"
 								/>
 								<div className="portfolio-overlay">
+									<div className="portfolio-overlay-content">
+										<h3>{item.title}</h3>
+										<p className="short-description">
+											{item.shortDescription ||
+												item.description.substring(0, 100) + "..."}
+										</p>
+										<div className="tech-tags">
+											{item.tags?.slice(0, 3).map((tag) => (
+												<span key={tag} className="tech-tag">
+													{tag}
+												</span>
+											))}
+										</div>
+									</div>
 									<div className="portfolio-links">
 										{item.demoUrl && (
 											<a
 												href={item.demoUrl}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="portfolio-link">
+												className="portfolio-link"
+												title="Live Demo">
 												<FiExternalLink />
 											</a>
 										)}
@@ -70,13 +85,15 @@ function Portfolio() {
 												href={item.githubUrl}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="portfolio-link">
+												className="portfolio-link"
+												title="View Code">
 												<FiGithub />
 											</a>
 										)}
 										<button
 											className="portfolio-link view-btn"
-											onClick={() => setSelectedProject(item)}>
+											onClick={() => setSelectedProject(item)}
+											title="View Details">
 											<FaSearchPlus />
 										</button>
 									</div>
@@ -84,7 +101,8 @@ function Portfolio() {
 							</div>
 							<div className="portfolio-info">
 								<h3>{item.title}</h3>
-								<p>{item.category}</p>
+								<p className="portfolio-category">{item.category}</p>
+								<p className="portfolio-date">{item.date}</p>
 							</div>
 						</div>
 					))}
@@ -99,17 +117,60 @@ function Portfolio() {
 								onClick={() => setSelectedProject(null)}>
 								&times;
 							</button>
-							<img src={selectedProject.image} alt={selectedProject.title} />
+							<div className="modal-image-container">
+								<img
+									src={selectedProject.image}
+									alt={selectedProject.title}
+									className="modal-image"
+								/>
+							</div>
 							<div className="modal-info">
 								<h3>{selectedProject.title}</h3>
-								<p>{selectedProject.description}</p>
+								<div className="project-meta">
+									<span className="project-category">
+										{selectedProject.category}
+									</span>
+									<span className="project-date">{selectedProject.date}</span>
+								</div>
+								<div className="project-description">
+									<h4>Project Overview</h4>
+									<p>{selectedProject.description}</p>
+
+									{selectedProject.features && (
+										<>
+											<h4>Key Features</h4>
+											<ul className="feature-list">
+												{selectedProject.features.map((feature, index) => (
+													<li key={index}>{feature}</li>
+												))}
+											</ul>
+										</>
+									)}
+
+									{selectedProject.challenges && (
+										<>
+											<h4>Challenges & Solutions</h4>
+											<p>{selectedProject.challenges}</p>
+										</>
+									)}
+								</div>
+								<div className="modal-tags">
+									<h4>Technologies Used</h4>
+									<div className="tags-container">
+										{selectedProject.tags?.map((tag) => (
+											<span key={tag} className="tag">
+												{tag}
+											</span>
+										))}
+									</div>
+								</div>
 								<div className="modal-links">
 									{selectedProject.demoUrl && (
 										<a
 											href={selectedProject.demoUrl}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="modal-link">
+											className="modal-link demo-link">
 											<FiExternalLink /> Live Demo
 										</a>
 									)}
@@ -118,17 +179,10 @@ function Portfolio() {
 											href={selectedProject.githubUrl}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="modal-link">
+											className="modal-link code-link">
 											<FiGithub /> View Code
 										</a>
 									)}
-								</div>
-								<div className="modal-tags">
-									{selectedProject.tags?.map((tag) => (
-										<span key={tag} className="tag">
-											{tag}
-										</span>
-									))}
 								</div>
 							</div>
 						</div>
