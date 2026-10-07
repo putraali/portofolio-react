@@ -1,88 +1,51 @@
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import "bootstrap/dist/css/bootstrap.min.css";
 
-function Footer() {
-    return (
-        <footer className="bg-dark text-white py-4 mt-5">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4 mb-4 mb-md-0">
-                        <h5>Putra Ali Perdana</h5>
-                        <p className="text-muted">
-                            Professional portfolio and projects showcase.
-                        </p>
-                    </div>
+import { Phone, Mail, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
 
-                    <div className="col-md-4 mb-4 mb-md-0">
-                        <h5>Quick Links</h5>
-                        <ul className="list-unstyled">
-                            <li>
-                                <a href="#home" className="text-white text-decoration-none hover-white">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#about" className="text-white text-decoration-none hover-white">
-                                    About
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#portfolio" className="text-white text-decoration-none hover-white">
-                                    Projects
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#contact" className="text-white text-decoration-none hover-white">
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+const Footer = () => {
+  return (
+    <footer className="bg-barbatos-frame py-5 border-top border-dark text-secondary">
+      <div className="container">
+        <div className="row gy-4 mb-5">
 
-                    <div className="col-md-4">
-                        <h5>Connect</h5>
-                        <div className="d-flex gap-3">
-                            <a href="https://www.linkedin.com/in/putra-ali-perdana-37166330a/" 
-                               className="text-white hover-white-icon" 
-                               target="_blank" 
-                               rel="noopener noreferrer">
-                                <FaLinkedin size={24} />
-                            </a>
-                            <a href="https://github.com" 
-                               className="text-white hover-white-icon" 
-                               target="_blank" 
-                               rel="noopener noreferrer">
-                                <FaGithub size={24} />
-                            </a>
-                            <a href="mailto:putraaliperdana@gmail.com" 
-                               className="text-white hover-white-icon">
-                                <FaEnvelope size={24} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <div className="col-md-4">
+            <h3 className="h3 fw-bold text-white mb-3">Uknown <span className="text-barbatos-red">Project</span>.</h3>
+            <p className="small lh-lg">
+              Menciptakan pengalaman digital yang bermakna melalui desain yang bersih dan kode yang efisien.
+            </p>
+          </div>
 
-                <hr className="my-4 bg-secondary" />
-
-                <div className="row">
-                    <div className="col-md-6 text-center text-md-start">
-                        <p className="mb-0">
-                            &copy; {new Date().getFullYear()} Putra Ali Perdana. All rights
-                            reserved.
-                        </p>
-                    </div>
-                    <div className="col-md-6 text-center text-md-end">
-                        <a href="/privacy" className="text-white me-3 text-decoration-none hover-white">
-                            Privacy Policy
-                        </a>
-                        <a href="/terms" className="text-white text-decoration-none hover-white">
-                            Terms of Service
-                        </a>
-                    </div>
-                </div>
+          <div className="col-md-4">
+            <h4 className="h5 text-white fw-bold mb-3">Contact Info</h4>
+            <div className="d-flex align-items-center gap-3 mb-2">
+              <Phone size={18} className="text-barbatos-gold" />
+              <span className="small">0896-6825-0177</span>
             </div>
-        </footer>
-    );
-}
+            <div className="d-flex align-items-center gap-3 mb-2">
+              <Mail size={18} className="text-barbatos-gold" />
+              <span className="small">putraaliperdana@gmail.com</span>
+            </div>
+            <div className="d-flex align-items-center gap-3 mb-2">
+              <MapPin size={18} className="text-barbatos-gold" />
+              <span className="small">Kawali, Ciamis, Jawa Barat</span>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <h4 className="h5 text-white fw-bold mb-3">Socials</h4>
+            <div className="d-flex gap-3">
+              <a href="#" className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"><Github size={20} /></a>
+              <a href="#" className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"><Linkedin size={20} /></a>
+              <a href="#" className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"><Instagram size={20} /></a>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-top border-dark pt-4 text-center small text-muted">
+          &copy; {new Date().getFullYear()} Uknown Project Portfolio. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
