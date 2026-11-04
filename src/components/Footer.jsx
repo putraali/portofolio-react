@@ -33,8 +33,24 @@ const Footer = () => {
           <div className="col-md-4">
             <h4 className="h5 text-white fw-bold mb-3">Socials</h4>
             <div className="d-flex gap-3">
-              <a href="#" className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"><Github size={20} /></a>
-              <a href="#" className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"><Linkedin size={20} /></a>
+              <a 
+                href="https://github.com/putraali" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"
+                title="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/putra-ali-perdana-37166330a/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"
+                title="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
               <a href="#" className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"><Instagram size={20} /></a>
             </div>
           </div>

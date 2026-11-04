@@ -1,4 +1,4 @@
-import { Download, Linkedin, Instagram, ArrowRight, Sparkles } from 'lucide-react';
+import { Download, Linkedin, Instagram, ArrowRight, Sparkles, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import AliImg from '../assets/Ali.jpg';
@@ -36,10 +36,27 @@ const Hero = () => {
           
           <div className="d-flex gap-3 align-items-center text-secondary">
             <span className="small fw-bold text-uppercase me-2 text-barbatos-gold">Connect</span>
-            <a href="#" className="bg-barbatos-frame border border-secondary rounded-circle d-flex align-items-center justify-content-center p-3 text-white shadow-sm hover-barbatos-red transition text-decoration-none" style={{ cursor: 'pointer', width: '50px', height: '50px' }}>
+            <a 
+              href="https://github.com/putraali" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-barbatos-frame border border-secondary rounded-circle d-flex align-items-center justify-content-center p-3 text-white shadow-sm hover-barbatos-red transition text-decoration-none" 
+              style={{ cursor: 'pointer', width: '50px', height: '50px' }}
+              title="GitHub"
+            >
+              <Github size={20} />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/putra-ali-perdana-37166330a/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-barbatos-frame border border-secondary rounded-circle d-flex align-items-center justify-content-center p-3 text-white shadow-sm hover-barbatos-red transition text-decoration-none" 
+              style={{ cursor: 'pointer', width: '50px', height: '50px' }}
+              title="LinkedIn"
+            >
               <Linkedin size={20} />
             </a>
-            <a href="#" className="bg-barbatos-frame border border-secondary rounded-circle d-flex align-items-center justify-content-center p-3 text-white shadow-sm hover-barbatos-red transition text-decoration-none" style={{ cursor: 'pointer', width: '50px', height: '50px' }}>
+            <a href="#" className="bg-barbatos-frame border border-secondary rounded-circle d-flex align-items-center justify-content-center p-3 text-white shadow-sm hover-barbatos-red transition text-decoration-none" style={{ cursor: 'pointer', width: '50px', height: '50px' }} title="Instagram">
               <Instagram size={20} />
             </a>
           </div>
