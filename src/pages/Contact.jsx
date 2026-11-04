@@ -22,7 +22,7 @@ const Contact = () => {
               <div className="p-3 text-barbatos-red rounded border border-dark"><Phone /></div>
               <div>
                 <p className="small text-secondary text-uppercase fw-bold mb-1">Call Me</p>
-                <p className="text-white fw-bold mb-0">0899-3415-875</p>
+                <p className="text-white fw-bold mb-0">0896-6825-0177</p>
               </div>
             </div>
             <div className="d-flex align-items-center gap-3 p-3 bg-barbatos-frame rounded border border-secondary">
