@@ -51,7 +51,15 @@ const Footer = () => {
               >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition"><Instagram size={20} /></a>
+              <a 
+                href="https://www.instagram.com/putraaliperdana_22/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2 bg-dark rounded text-secondary hover-barbatos-red transition" 
+                title="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
             </div>
           </div>
         </div>

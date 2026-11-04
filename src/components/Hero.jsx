@@ -56,7 +56,14 @@ const Hero = () => {
             >
               <Linkedin size={20} />
             </a>
-            <a href="#" className="bg-barbatos-frame border border-secondary rounded-circle d-flex align-items-center justify-content-center p-3 text-white shadow-sm hover-barbatos-red transition text-decoration-none" style={{ cursor: 'pointer', width: '50px', height: '50px' }} title="Instagram">
+            <a 
+              href="https://www.instagram.com/putraaliperdana_22/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-barbatos-frame border border-secondary rounded-circle d-flex align-items-center justify-content-center p-3 text-white shadow-sm hover-barbatos-red transition text-decoration-none" 
+              style={{ cursor: 'pointer', width: '50px', height: '50px' }} 
+              title="Instagram"
+            >
               <Instagram size={20} />
             </a>
           </div>
